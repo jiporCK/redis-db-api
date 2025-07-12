@@ -18,12 +18,41 @@ public class ProductController {
         return productService.getAll();
     }
 
+    @GetMapping("/{id}")
+    public Product getById(@PathVariable Long id) {
+        return productService.getById(id);
+    }
+
     @PostMapping
     public ResponseEntity<?> createProduct(@RequestBody Product product) {
-        if (productService.create(product)) {
-            return ResponseEntity.status(HttpStatus.CREATED).body(product);
-        }
-        return ResponseEntity.badRequest().body("Invalid product or failed to save");
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(
+                productService.create(product)
+                        ? "Product has been created"
+                        : "Failed to create product"
+        );
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteProductById(@PathVariable Long id) {
+
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(
+                productService.delete(id)
+                        ? "Product has been deleted"
+                        : "Failed to delete product"
+        );
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateProductById(@PathVariable Long id,
+                                               @RequestBody Product product) {
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(
+                productService.updateById(id, product)
+                        ? "Product has been updated"
+                        : "Failed to update product"
+        );
+    }
+
 }
 

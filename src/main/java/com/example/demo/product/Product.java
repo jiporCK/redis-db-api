@@ -28,6 +28,8 @@ public class Product implements Serializable {
 
     private LocalDateTime createdAt;
 
+    private LocalDateTime updatedAt;
+
     public Product(String name, BigDecimal price, Integer qty) {
         this.name = name;
         this.price = price;
