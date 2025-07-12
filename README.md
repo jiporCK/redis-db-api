@@ -51,8 +51,6 @@ springboot-product-api/
 
 ````
 
----
-
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
@@ -61,8 +59,6 @@ springboot-product-api/
 git clone https://github.com/jiporCK/redis-db-api.git
 cd springboot-product-api
 ````
-
----
 
 ### 2. Start PostgreSQL and Redis with Docker
 
@@ -78,8 +74,6 @@ This will start:
 * **Redis** at `localhost:6379`
 
 > You can verify with `docker ps`
-
----
 
 ### 3. Run the Spring Boot Application
 
@@ -98,8 +92,6 @@ java -jar target/demo-0.0.1-SNAPSHOT.jar
 
 App will run on:
 📍 `http://localhost:8080`
-
----
 
 ## 🌐 API Endpoints
 
@@ -123,8 +115,6 @@ App will run on:
 
 * Returns: The saved product
 
----
-
 ## ⚙️ Configuration
 
 ### `application.yml`
@@ -146,8 +136,6 @@ spring:
   cache:
     type: redis
 ```
-
----
 
 ### `docker-compose.yml`
 
@@ -176,8 +164,6 @@ volumes:
   pgdata:
 ```
 
----
-
 ## 🧪 Testing with Postman
 
 ### Add Product
@@ -201,26 +187,16 @@ POST http://localhost:8080/api/products
 ```
 GET http://localhost:8080/api/products
 ```
-
----
-
 ## 🧠 Notes
 
 * Redis is used via Spring Cache (`@Cacheable`)
 * TTL (Time-To-Live) for cache entries is set in `CacheConfig`
 * Product data is stored in PostgreSQL
 
----
-
 ## 🪪 License
 
 This project is open-source and available under the [MIT License](LICENSE).
 
----
-
 ## 👨‍💻 Author
 
 Made with ❤️ by Sreng Chipor
-
-```
-
